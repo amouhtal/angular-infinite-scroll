@@ -1,0 +1,16 @@
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false"
+>
+    <div class="data-card" *ngFor="let item of items">
+        {{item}}
+    </div>
+
+    <div *ngIf="isLoading" class="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>
